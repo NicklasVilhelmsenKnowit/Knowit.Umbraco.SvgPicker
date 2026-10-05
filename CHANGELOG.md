@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Fixed
+- The package now ships its backoffice files as Razor Class Library static web assets instead of NuGet content files. The property editor is picked up when running locally (F5 / `dotnet run`), not only after `dotnet publish`, and nothing is copied into the consuming project.
+
 ## [1.1.0] - 2026-07-29
 
 ### Added

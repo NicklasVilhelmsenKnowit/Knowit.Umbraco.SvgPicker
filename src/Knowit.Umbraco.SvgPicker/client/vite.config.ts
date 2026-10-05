@@ -12,7 +12,7 @@ export default defineConfig({
       },
       formats: ['es'],
     },
-    outDir: '../App_Plugins/SvgPicker',
+    outDir: '../wwwroot/App_Plugins/SvgPicker',
     emptyOutDir: false,
     rollupOptions: {
       external: [/^@umbraco-cms\//],

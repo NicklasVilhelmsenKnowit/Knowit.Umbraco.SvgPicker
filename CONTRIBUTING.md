@@ -22,7 +22,7 @@ npm run build      # one-off build
 npm run dev        # watch mode during development
 ```
 
-The output lands in `App_Plugins/SvgPicker/svg-picker.js` automatically.
+The output lands in `wwwroot/App_Plugins/SvgPicker/` automatically.
 
 ### Test site
 
@@ -32,4 +32,4 @@ A sample spritesheet with 8 symbols is included at `testsite/.../wwwroot/assets/
 
 > **Important:** Stop the test site before rebuilding the solution. The test site holds the package DLL open while running, which causes MSBuild to fail with a file lock error. This is normal .NET behaviour and only affects local development.
 
-The `App_Plugins` folder in the test site is a directory junction pointing at the source — no rebuild is needed after changing dashboard files, just refresh the browser.
+The package is a Razor Class Library, so the test site serves `wwwroot/App_Plugins/SvgPicker/` straight from the source project through its project reference (static web assets). There is no `App_Plugins` folder in the test site. With `npm run dev` running, just refresh the browser after changing the property editor; no .NET rebuild is needed.
